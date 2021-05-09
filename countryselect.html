@@ -1,0 +1,248 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style>
+			*{ margin:0; padding:0; }
+			/*下拉列表*/
+			ul,
+			dl,
+			ol,
+			li {
+				list-style: none;
+			}
+
+			.dropdown {
+				position: relative;
+				font-size: 14px;
+				
+				width: 412px;
+				height: 50px;
+
+			}
+			
+			.coal {
+				/* outline:none; */
+				border: 1px solid #8ec69f !important;
+				border-radius: 6px;
+			}
+			
+
+			.dropdownbox01 {
+				width: 398px;
+				height: 50px;
+				color: #000;
+			
+				border-radius: 6px;
+				font-size: 14px;
+				border: 1px solid #f2f2f2;
+				cursor: pointer;
+				appearance: none;
+				-moz-appearance: none;
+				-webkit-appearance: none;
+				background: url(img/i.png) no-repeat scroll 377px center transparent;
+				padding-left: 15px;
+			
+			}
+
+			/* .dropdownbox01 span {
+				margin-left: 10px;
+				width: 212px !important;
+			} */
+
+			.dropdownbox01 .tac {
+				text-align: left !important;
+			}
+
+			#dropDownList1 .dropdownbox01 {
+				width: 120px;
+				background-position: 96px center;
+			}
+
+			#dropDownList1 .dropdownbox02 li {
+				width: 250px;
+			}
+
+			.dropdownbox02 {
+				width: 413px;
+				max-height: 300px;
+				display: none;
+				position: absolute;
+				
+				left: 0px;
+				top: 55px;
+				z-index: 1;
+				background: #fff;
+				border: 1px solid #F2F2F2;
+				border-radius: 6px;
+				-webkit-box-shadow: 0 2px 4px rgba(0, 0, 0, 0.4);
+				-moz-box-shadow: 0 2px 4px rgba(0, 0, 0, 0.4);
+				box-shadow: 0 2px 4px rgba(0, 0, 0, 0.4);
+				
+				overflow-y: auto;
+				overflow-x: hidden;
+			}
+
+
+
+			.dropdownbox02 span {
+				margin-top: 10px;
+				position: absolute;
+				width: 212px !important;
+				line-height: 0px;
+			}
+
+
+			.dropdownbox02 img {
+				display: inline-block;
+				margin-right: 6px;
+				float: left;
+			}
+
+			.dropdownbox01 img {
+				
+				margin-right: 6px;
+			
+			}
+
+			.dropdownbox02 li {
+				padding-left: 15px;
+				width: 398;
+				height: 40px;
+				line-height: 40px;
+				background: #fff;
+				color: #707070;
+				cursor: pointer;
+				
+				
+			}
+
+			.dropdownbox02 li .img02 {
+				display: block;
+			}
+
+			.dropdownbox02 li:hover {
+		        background: #f8f9fa;
+		        color: #4898fe;
+		    }
+			
+			.liicoimg{
+				width: 25px;
+				height: 17px;
+			}
+			
+			.icoimg{
+				width: 25px;
+				height: 17px;
+				position: absolute;
+				margin-top: 27px;
+			}
+			
+			.nationality{
+				position: absolute;
+				color: #8190a4;
+				margin-top: 7px;
+				margin-left: 15px;
+			}
+			
+			.nationatxt{
+				position: absolute;
+				margin-top: 25px;
+				margin-left: 35px;
+			}
+			
+			.dropdownbox02 ul li span img{
+				margin-top: 2px;
+			}
+			
+		</style>
+	</head>
+	<body>
+		<div id="dropDownList2" class="dropdown">
+			<span class="nationality">
+				国籍
+			</span>
+			<div id="caoi"  class="dropdownbox01" data-value="1" > 
+				<span ><img class="icoimg" src="img/China.png" alt="" /><span class="nationatxt">中国</span></span>
+			</div>
+			<div class="dropdownbox02">
+				<ul>
+					<li data-option="1">
+						<span ><img class="icoimg" src="img/China.png" alt="" /><span class="nationatxt">中国</span></span>
+					</li>
+					<li data-option="2">
+						<span ><img class="icoimg" src="img/China-HongKong.png" alt="" /><span class="nationatxt">中国香港</span></span>
+					</li>
+					<li data-option="3">
+						<span ><img class="icoimg" src="img/China-Taiwan.png" alt="" /><span class="nationatxt">中国台湾</span></span>
+					</li>
+					<li data-option="4">
+						<span ><img class="icoimg" src="img/Cambodia.png" alt="" /><span class="nationatxt">柬埔寨</span></span>
+					</li>
+					<li data-option="5">
+						<span ><img class="icoimg" src="img/Philippines.png" alt="" /><span class="nationatxt">菲律宾</span></span>
+					<li data-option="6">
+						<span ><img class="icoimg" src="img/Singapore.png" alt="" /><span class="nationatxt">新加坡</span></span>
+					</li>
+					<li data-option="7">
+						<span ><img class="icoimg" src="img/Vietnam.png" alt="" /><span class="nationatxt">越南</span></span>
+					</li>
+				</ul>
+			</div>
+		</div>
+	</body>
+	<script src="jquery-1.11.0.min.js"></script>
+	<script>
+		$(function() {
+			//下拉列表
+			// $(".dropdownbox02 li").mouseenter(function() {
+			// 	$(this).children(".img01").hide();
+			// 	$(this).children(".img02").show();
+				
+			// }).mouseleave(function() {
+			// 	$(this).children(".img01").show();
+			// 	$(this).children(".img02").hide();
+			// });
+		
+			$(".dropdown .dropdownbox01").click(function() {
+				$(".dropdown .dropdownbox02").hide();
+				$(this).siblings(".dropdownbox02").show();
+				$(this).parent(".dropdown").siblings(".dropdown").children(".dropdownbox02").hide();
+			
+				$('#caoi').addClass('coal');
+				
+				
+			});
+			//点击处下拉框以外地区隐藏下拉框
+			function stopPropagation(e) {
+				if (e.stopPropagation) e.stopPropagation();
+				else e.cancelBubble = true;
+			
+			}
+			$(document).bind('click', function() {
+				$(".dropdown .dropdownbox02").hide();
+
+				$('#caoi').removeClass('coal')
+			});
+			$(".dropdown").bind('click', function(e) {
+				stopPropagation(e);
+				
+			});
+			//点击列表子项事件
+			$(".dropdown .dropdownbox02 li").click(function() {
+				$(this).parents(".dropdownbox02").hide();
+				$(this).parents(".dropdownbox02").siblings(".dropdownbox01").children("span").html($(this).children("span").html());
+				var imgsrc = $(this).children(".img01").attr("src");
+				$(this).parents(".dropdownbox02").siblings(".dropdownbox01").children("img").attr("src", imgsrc);
+				$(this).parents(".dropdownbox02").siblings('.dropdownbox01').attr('data-value', $(this).attr('data-option'));
+				
+			});
+		})
+		// 获得自定义属性值
+		console.log($("#caoi").attr("data-value"));
+		console.log($("#caoi").data("value"))
+		
+		
+	</script>
+</html>
